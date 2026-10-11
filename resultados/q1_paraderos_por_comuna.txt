@@ -1,0 +1,35 @@
+== Q1: paraderos GTFS por comuna
+       comuna        | paraderos_gtfs | km2_en_caja | paraderos_por_km2 
+---------------------+----------------+-------------+-------------------
+ San Ramón           |              6 |         0.2 |              36.9
+ Lo Espejo           |            118 |         4.0 |              29.2
+ Lo Prado            |            191 |         6.5 |              29.2
+ Conchalí            |            311 |        10.9 |              28.4
+ La Granja           |             27 |         1.1 |              25.0
+ Santiago            |            573 |        23.2 |              24.7
+ San Joaquín         |            244 |         9.9 |              24.6
+ Quinta Normal       |            282 |        11.8 |              23.9
+ Cerro Navia         |            163 |         7.1 |              22.9
+ Estación Central    |            310 |        14.4 |              21.6
+ Ñuñoa               |            363 |        16.9 |              21.5
+ La Cisterna         |             37 |         1.7 |              21.5
+ Pedro Aguirre Cerda |            186 |         8.7 |              21.3
+ Macul               |            271 |        12.8 |              21.2
+ Recoleta            |            327 |        15.6 |              20.9
+ Independencia       |            152 |         7.4 |              20.7
+ Maipú               |            210 |        11.2 |              18.8
+ Pudahuel            |             96 |         5.1 |              18.7
+ San Miguel          |            179 |         9.6 |              18.6
+ Cerrillos           |            278 |        15.2 |              18.3
+ La Florida          |            165 |         9.1 |              18.2
+ Providencia         |            242 |        14.4 |              16.8
+ La Reina            |            263 |        17.1 |              15.4
+ Renca               |            239 |        16.7 |              14.3
+ Peñalolén           |            430 |        30.9 |              13.9
+ Las Condes          |            364 |        30.9 |              11.8
+ Quilicura           |            178 |        16.7 |              10.7
+ Huechuraba          |            165 |        21.0 |               7.9
+ Vitacura            |            194 |        26.3 |               7.4
+ Lo Barnechea        |              5 |         2.8 |               1.8
+(30 rows)
+

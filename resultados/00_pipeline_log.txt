@@ -1,0 +1,40 @@
+        etapa         |                                            detalle                                             |    n    
+----------------------+------------------------------------------------------------------------------------------------+---------
+ osm_raw              | osm_puntos                                                                                     |  254538
+ osm_raw              | osm_lineas                                                                                     |  169578
+ osm_raw              | osm_poligonos                                                                                  |  146619
+ osm_invalidos        | lineas invalidas (no se reparan)                                                               |       1
+ osm_invalidos        | poligonos invalidos antes de reparar                                                           |     368
+ osm_invalidez_motivo | IllegalArgumentException: Invalid number of points in Linear                                   |      77
+ osm_invalidez_motivo | Ring Self-intersection                                                                         |       1
+ osm_invalidez_motivo | Self-intersection                                                                              |      58
+ osm_invalidez_motivo | Too few points in geometry component                                                           |     232
+ osm_invalidos        | area declarada de los invalidos antes (m2)                                                     | 8901731
+ osm_invalidos        | poligonos invalidos despues de reparar                                                         |       0
+ osm_invalidos        | poligonos vacios despues de reparar (se excluyen)                                              |     309
+ dpa                  | comunas en la caja                                                                             |      30
+ dpa                  | trozos de comunas_sub                                                                          |      34
+ dpa                  | vertices comunas_zona                                                                          |    5106
+ dpa                  | vertices comunas_cl (pais) de esas comunas                                                     |   12601
+ dpa                  | edificios sin comuna (fuera de la caja curva)                                                  |       0
+ gtfs_raw             | stops                                                                                          |   18455
+ gtfs_raw             | routes                                                                                         |     428
+ gtfs_raw             | trips                                                                                          |   26159
+ gtfs_raw             | shapes (puntos)                                                                                |  456573
+ gtfs_raw             | stop_times                                                                                     | 1098529
+ gtfs_raw             | frequencies                                                                                    |   14542
+ gtfs                 | stops totales en stops.txt                                                                     |   18455
+ gtfs                 | stops excluidos por location_type (estaciones/accesos/nodos)                                   |    5989
+ gtfs                 | paraderos dentro de la caja (paraderos_gtfs)                                                   |    6569
+ gtfs                 | stops de la caja (type 0) SIN servicio de bus: andenes Metro/Tren o sin stop_times (excluidos) |     243
+ gtfs                 | rutas del feed por tipo: buses (3)                                                             |     419
+ gtfs                 | rutas del feed por tipo: metro (1) y tren (0/2), excluidas                                     |       9
+ gtfs                 | shape_id distintos en shapes.txt                                                               |     981
+ gtfs                 | shapes con <2 puntos (descartados)                                                             |       0
+ gtfs                 | shapes asociados a mas de una ruta                                                             |       0
+ gtfs                 | recorridos (shapes que tocan la caja)                                                          |     690
+ gtfs                 | recorridos canonicos (ruta x sentido)                                                          |     586
+ gtfs                 | rutas distintas en la caja                                                                     |     338
+ gtfs                 | recorridos no LineString                                                                       |       0
+(36 rows)
+

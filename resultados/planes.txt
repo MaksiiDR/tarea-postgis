@@ -1,0 +1,82 @@
+=== Plan 1 (Q2): anti-join ST_DWithin edificios → paraderos_gtfs
+                                                             QUERY PLAN                                                              
+-------------------------------------------------------------------------------------------------------------------------------------
+ Finalize Aggregate (actual time=680.181..687.321 rows=1 loops=1)
+   ->  Gather (actual time=680.052..687.305 rows=3 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         ->  Partial Aggregate (actual time=649.529..649.530 rows=1 loops=3)
+               ->  Nested Loop Anti Join (actual time=164.200..649.480 rows=450 loops=3)
+                     ->  Parallel Seq Scan on edificios e (actual time=0.040..8.532 rows=39567 loops=3)
+                     ->  Index Scan using idx_paraderos_gtfs_geom on paraderos_gtfs p (actual time=0.011..0.011 rows=1 loops=118700)
+                           Index Cond: (geom && st_expand(e.punto, '500'::double precision))
+                           Filter: st_dwithin(e.punto, geom, '500'::double precision)
+                           Rows Removed by Filter: 1
+ Planning Time: 45.153 ms
+ Execution Time: 746.929 ms
+(13 rows)
+
+=== Plan 1b (Q2): lo mismo con el índice GIST de paraderos_gtfs deshabilitado (enable_indexscan/bitmap off)
+                                               QUERY PLAN                                               
+--------------------------------------------------------------------------------------------------------
+ Finalize Aggregate (actual time=31021.692..31029.127 rows=1 loops=1)
+   ->  Gather (actual time=31004.066..31029.105 rows=3 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         ->  Partial Aggregate (actual time=30987.082..30987.084 rows=1 loops=3)
+               ->  Nested Loop Anti Join (actual time=210.978..30986.965 rows=450 loops=3)
+                     Join Filter: st_dwithin(e.punto, p.geom, '500'::double precision)
+                     Rows Removed by Join Filter: 96945339
+                     ->  Parallel Seq Scan on edificios e (actual time=0.018..9.633 rows=39567 loops=3)
+                     ->  Seq Scan on paraderos_gtfs p (actual time=0.001..0.137 rows=2451 loops=118700)
+ Planning Time: 2.370 ms
+ Execution Time: 31029.565 ms
+(12 rows)
+
+=== Plan 2 (Q1): punto-en-polígono paraderos_gtfs ↔ comunas_sub
+                                                      QUERY PLAN                                                       
+-----------------------------------------------------------------------------------------------------------------------
+ Aggregate (actual time=10.618..10.619 rows=1 loops=1)
+   ->  Nested Loop (actual time=0.041..10.308 rows=6569 loops=1)
+         ->  Seq Scan on comunas_sub c (actual time=0.004..0.047 rows=34 loops=1)
+         ->  Index Scan using idx_paraderos_gtfs_geom on paraderos_gtfs p (actual time=0.029..0.290 rows=193 loops=34)
+               Index Cond: (geom && c.geom)
+               Filter: st_intersects(geom, c.geom)
+               Rows Removed by Filter: 121
+ Planning Time: 0.517 ms
+ Execution Time: 10.658 ms
+(9 rows)
+
+=== Plan 3 (Q5): KNN LATERAL, un paradero → amenidad de salud más cercana
+                                                  QUERY PLAN                                                   
+---------------------------------------------------------------------------------------------------------------
+ Nested Loop (actual time=0.386..21.986 rows=200 loops=1)
+   ->  Limit (actual time=0.005..0.089 rows=200 loops=1)
+         ->  Seq Scan on paraderos_gtfs (actual time=0.004..0.075 rows=200 loops=1)
+   ->  Limit (actual time=0.109..0.109 rows=1 loops=200)
+         ->  Index Scan using idx_amenidades_geom on amenidades am (actual time=0.109..0.109 rows=1 loops=200)
+               Order By: (geom <-> paraderos_gtfs.geom)
+               Filter: (amenity = ANY ('{pharmacy,hospital,clinic,doctors}'::text[]))
+               Rows Removed by Filter: 20
+ Planning Time: 0.369 ms
+ Execution Time: 22.040 ms
+(10 rows)
+
+=== Plan 4 (Q4): líneas contra trozos de comunas_sub
+                                                     QUERY PLAN                                                     
+--------------------------------------------------------------------------------------------------------------------
+ GroupAggregate (actual time=112.726..412.704 rows=30 loops=1)
+   Group Key: c.comuna
+   ->  Sort (actual time=103.013..108.968 rows=2667 loops=1)
+         Sort Key: c.comuna
+         Sort Method: external merge  Disk: 13632kB
+         ->  Nested Loop (actual time=0.152..90.626 rows=2667 loops=1)
+               ->  Seq Scan on comunas_sub c (actual time=0.003..0.030 rows=34 loops=1)
+               ->  Index Scan using idx_recorridos_geom on recorridos r (actual time=0.149..2.654 rows=78 loops=34)
+                     Index Cond: (geom && c.geom)
+                     Filter: (canonico AND st_intersects(geom, c.geom))
+                     Rows Removed by Filter: 126
+ Planning Time: 0.448 ms
+ Execution Time: 414.396 ms
+(13 rows)
+

@@ -1,0 +1,70 @@
+== A. comunas_zona (1 polígono por comuna, recortada)
+                                            QUERY PLAN                                            
+--------------------------------------------------------------------------------------------------
+ GroupAggregate (actual rows=30 loops=1)
+   Group Key: c.comuna
+   ->  Sort (actual rows=2492 loops=1)
+         Sort Key: c.comuna
+         Sort Method: external merge  Disk: 13688kB
+         ->  Nested Loop (actual rows=2492 loops=1)
+               ->  Seq Scan on comunas_zona c (actual rows=30 loops=1)
+               ->  Index Scan using idx_recorridos_geom on recorridos r (actual rows=83 loops=30)
+                     Index Cond: (geom && c.geom)
+                     Filter: (canonico AND st_intersects(geom, c.geom))
+                     Rows Removed by Filter: 128
+ Planning Time: 11.698 ms
+ Execution Time: 439.876 ms
+(13 rows)
+
+== B. comunas_sub (trozos de <=256 vértices)
+                                            QUERY PLAN                                            
+--------------------------------------------------------------------------------------------------
+ GroupAggregate (actual rows=30 loops=1)
+   Group Key: c.comuna
+   ->  Sort (actual rows=2667 loops=1)
+         Sort Key: c.comuna
+         Sort Method: external merge  Disk: 13632kB
+         ->  Nested Loop (actual rows=2667 loops=1)
+               ->  Seq Scan on comunas_sub c (actual rows=34 loops=1)
+               ->  Index Scan using idx_recorridos_geom on recorridos r (actual rows=78 loops=34)
+                     Index Cond: (geom && c.geom)
+                     Filter: (canonico AND st_intersects(geom, c.geom))
+                     Rows Removed by Filter: 126
+ Planning Time: 0.396 ms
+ Execution Time: 425.631 ms
+(13 rows)
+
+== C. comunas_cl (país: polígono entero de cada comuna, sin recortar a la caja)
+                                         QUERY PLAN                                         
+--------------------------------------------------------------------------------------------
+ HashAggregate (actual rows=36 loops=1)
+   Group Key: c.comuna
+   Batches: 9  Memory Usage: 280kB  Disk Usage: 9152kB
+   ->  Nested Loop (actual rows=2867 loops=1)
+         ->  Seq Scan on comunas_cl c (actual rows=345 loops=1)
+         ->  Index Scan using idx_recorridos_geom on recorridos r (actual rows=8 loops=345)
+               Index Cond: (geom && c.geom)
+               Filter: (canonico AND st_intersects(geom, c.geom))
+               Rows Removed by Filter: 14
+ Planning Time: 0.707 ms
+ Execution Time: 1208.361 ms
+(11 rows)
+
+== D. comunas enteras (como C) pero subdivididas en trozos de <=256 vértices
+                                            QUERY PLAN                                            
+--------------------------------------------------------------------------------------------------
+ GroupAggregate (actual rows=30 loops=1)
+   Group Key: c.comuna
+   ->  Sort (actual rows=3404 loops=1)
+         Sort Key: c.comuna
+         Sort Method: external merge  Disk: 17000kB
+         ->  Nested Loop (actual rows=3404 loops=1)
+               ->  Seq Scan on comunas_cl_sub c (actual rows=86 loops=1)
+               ->  Index Scan using idx_recorridos_geom on recorridos r (actual rows=40 loops=86)
+                     Index Cond: (geom && c.geom)
+                     Filter: (canonico AND st_intersects(geom, c.geom))
+                     Rows Removed by Filter: 63
+ Planning Time: 0.415 ms
+ Execution Time: 547.094 ms
+(13 rows)
+

@@ -1,0 +1,35 @@
+== Q4: km de recorrido por comuna (comunas_sub)
+       comuna        | km_canonicos | km_todas_variantes | rutas 
+---------------------+--------------+--------------------+-------
+ Santiago            |       1099.1 |             1291.9 |   149
+ Las Condes          |        605.2 |              689.8 |    71
+ Estación Central    |        517.2 |              573.7 |    78
+ Peñalolén           |        449.7 |              652.4 |    67
+ Ñuñoa               |        387.3 |              570.4 |    57
+ Providencia         |        377.5 |              474.2 |    80
+ Renca               |        336.0 |              362.3 |    33
+ Quilicura           |        318.5 |              396.6 |    45
+ Vitacura            |        311.3 |              349.6 |    40
+ Maipú               |        300.5 |              346.9 |    60
+ Cerrillos           |        294.9 |              338.2 |    52
+ Quinta Normal       |        265.7 |              318.3 |    45
+ La Reina            |        262.5 |              402.0 |    34
+ Huechuraba          |        261.8 |              294.3 |    48
+ Conchalí            |        261.1 |              295.7 |    49
+ Recoleta            |        246.6 |              265.3 |    68
+ San Miguel          |        234.3 |              254.4 |    47
+ Macul               |        234.0 |              327.6 |    51
+ Lo Prado            |        207.9 |              247.2 |    68
+ La Florida          |        198.2 |              242.5 |    56
+ San Joaquín         |        196.9 |              212.5 |    38
+ Pedro Aguirre Cerda |        187.6 |              212.0 |    36
+ Independencia       |        183.2 |              196.5 |    41
+ Cerro Navia         |        155.8 |              175.2 |    33
+ Pudahuel            |        122.5 |              140.0 |    62
+ Lo Espejo           |        104.4 |              116.6 |    34
+ La Cisterna         |         40.3 |               47.2 |    27
+ La Granja           |         15.1 |               17.5 |    20
+ Lo Barnechea        |          7.7 |                7.8 |    10
+ San Ramón           |          3.6 |                4.3 |    14
+(30 rows)
+

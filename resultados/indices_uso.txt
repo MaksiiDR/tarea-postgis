@@ -1,0 +1,21 @@
+     tabla      |         indice          | lecturas |   tamano   
+----------------+-------------------------+----------+------------
+ calles         | idx_calles_geom         |        0 | 4176 kB
+ comunas_sub    | idx_comunas_sub_cut     |        0 | 16 kB
+ comunas_sub    | idx_comunas_sub_geom    |        0 | 8192 bytes
+ comunas_zona   | idx_comunas_zona_geom   |        0 | 8192 bytes
+ edificios      | idx_edificios_geom      |        0 | 9912 kB
+ mv_grilla      | idx_mv_grilla_geom      |        0 | 40 kB
+ paraderos_gtfs | paraderos_gtfs_pkey     |        0 | 160 kB
+ recorridos     | recorridos_pkey         |        0 | 48 kB
+ edificios      | idx_edificios_cut       |        1 | 832 kB
+ recorridos     | idx_recorridos_ruta     |        1 | 32 kB
+ amenidades     | idx_amenidades_amenity  |        4 | 168 kB
+ comunas_zona   | idx_comunas_zona_cut    |        4 | 16 kB
+ amenidades     | idx_amenidades_geom     |      331 | 808 kB
+ edificios      | idx_edificios_punto     |      716 | 9824 kB
+ recorridos     | idx_recorridos_geom     |     1561 | 40 kB
+ paraderos_osm  | idx_paraderos_osm_geom  |   263676 | 264 kB
+ paraderos_gtfs | idx_paraderos_gtfs_geom |   383070 | 272 kB
+(17 rows)
+

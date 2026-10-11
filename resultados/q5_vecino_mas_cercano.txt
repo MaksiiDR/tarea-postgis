@@ -1,0 +1,136 @@
+== Q5: ruta 210
+ stop_id |                       stop_name                       | amenity  |            nombre_amenidad            | distancia_m 
+---------+-------------------------------------------------------+----------+---------------------------------------+-------------
+ PD203   | PD203-Parada 2 / Paradero 1 Av.Vicuña Mackenna        | pharmacy | Farmacia Amaya                        |         762
+ PH207   | PH207-Parada 1 / Paradero 1 Av.Vicuña Mackenna        | pharmacy |                                       |         658
+ PH216   | PH216-Av. Vicuña Mackenna / esq. Llico                | pharmacy | Cruz Verde                            |         528
+ PD194   | PD194-Av. Vicuña Mackenna / esq. Estadio Colo Colo    | pharmacy | Cruz Verde                            |         505
+ PI549   | PI549-Avenida 5 de Abril / esq. Con Con               | pharmacy | Farmacia Leo                          |         480
+ PD1612  | PD1612-Parada 1 / (M) Carlos Valdovinos               | clinic   | CESFAM/ SAPU San Joaquín              |         455
+ PD195   | PD195-Parada / Paradero 7 Av.Vicuña Mackenna          | pharmacy | Cruz Verde                            |         455
+ PD200   | PD200-Parada 3 / (M) Carlos Valdovinos                | clinic   | CESFAM/ SAPU San Joaquín              |         450
+ PD1608  | PD1608-Parada 2 / Paradero 2 Av.Vicuña Mackenna       | pharmacy | Farmacia Amaya                        |         431
+ PH208   | PH208-Parada 1 / Paradero 2 Av.Vicuña Mackenna        | pharmacy | Farmacia Amaya                        |         423
+ PH1645  | PH1645-Av. Vicuña Mackenna / esq. Capitán Prat        | pharmacy | Cruz Verde                            |         423
+ PH215   | PH215-Parada / Paradero 7 Av.Vicuña Mackenna          | pharmacy | Cruz Verde                            |         413
+ PI909   | PI909-Concón / esq. Manuel Thompson                   | pharmacy | Farmacias del Dr. Simi                |         381
+ PD201   | PD201-Av. Vicuña Mackenna / esq. Domingo Arteaga      | pharmacy | Farmacia Amaya                        |         372
+ PI1793  | PI1793-General Amengual / esq. Guernica               | doctors  | Instituto de Rehabilitación Teletón   |         360
+ PI910   | PI910-Parada 6 / Concón                               | pharmacy | Farmacias del Dr. Simi                |         332
+ PI450   | PI450-Parada 2 / Concón                               | doctors  | Instituto de Rehabilitación Teletón   |         324
+ PA823   | PA823-Av. Vicuña Mackenna / esq. Victoria             | pharmacy | Movimed                               |         321
+ PI1841  | PI1841-General Amengual / esq. Callejón Ugarte        | pharmacy | Farmacia Leo                          |         288
+ PI471   | PI471-Parada 4 / Concón                               | pharmacy | Farmacias del Dr. Simi                |         283
+ PI550   | PI550-Avenida 5 de Abril / esq. General Amengual      | pharmacy | Farmacia Leo                          |         282
+ PI1840  | PI1840-General Amengual / esq. Callejón Ugarte        | pharmacy | Farmacia Leo                          |         279
+ PI448   | PI448-Parada 1 / Concón                               | pharmacy | Farmacias del Dr. Simi                |         272
+ PH210   | PH210-Av. Vicuña Mackenna / esq. Schubert             | pharmacy | Farmacia Amaya                        |         271
+ PA163   | PA163-Parada 1 / (M) Unión Latinoamericana            | pharmacy | Farmacias del Dr. Simi                |         268
+ PE121   | PE121-Parada / Paradero 10 Av.Vicuña Mackenna         | clinic   | Fonasa                                |         267
+ PA186   | PA186-Parada 6 / (M) Unión Latinoamericana            | pharmacy | SalcoBrand                            |         250
+ PE1498  | PE1498-Parada 8 / (M) Pedrero                         | clinic   | Fonasa                                |         249
+ PH213   | PH213-Parada 1 / Paradero 6 Av.Vicuña Mackenna        | clinic   | Centro Médico UC San Joaquín          |         247
+ PA171   | PA171-Barón P. de Coubertin / esq. Av.Vicuña Mackenna | pharmacy | Farmacias del Dr. Simi                |         240
+ PE123   | PE123-Parada / Paradero 12 Av.Vicuña Mackenna         | doctors  | Flodial                               |         233
+ PD206   | PD206-Av. Vicuña Mackenna / esq. Santa Elvira         | pharmacy | Movimed                               |         231
+ PA41    | PA41-Parada 6 / (M) Universidad Católica              | pharmacy | Farmacias del Dr. Simi                |         227
+ PD205   | PD205-Av. Vicuña Mackenna / esq. Miguel León Prado    | pharmacy |                                       |         221
+ PE157   | PE157-Parada 2 / Mall Florida Center                  | clinic   | Fonasa                                |         217
+ PD196   | PD196-Parada 1 / (M) San Joaquín                      | pharmacy | Cruz Verde                            |         205
+ PD204   | PD204-Parada 2 / (M) Ñuble                            | pharmacy |                                       |         203
+ PE1488  | PE1488-Av. Vicuña Mackenna / esq. Millaray            | doctors  | Mutual de Seguridad                   |         202
+ PE122   | PE122-Parada / Paradero 11 Av.Vicuña Mackenna         | doctors  | Mutual de Seguridad                   |         197
+ PA598   | PA598-Parada 8 / (M) Universidad de Chile             | pharmacy | Farmacias Ahumada                     |         197
+ PA42    | PA42-Parada 4 / (M) Universidad Católica              | pharmacy | Farmacias del Dr. Simi                |         191
+ PA692   | PA692-Parada 2 / (M) Universidad Católica             | clinic   | Centro Médico Santa Lucía             |         179
+ PD197   | PD197-Parada 2 / Paradero 6 Av.Vicuña Mackenna        | pharmacy | Cruz Verde                            |         178
+ PH214   | PH214-Parada 2 / (M) San Joaquín                      | pharmacy | Cruz Verde                            |         177
+ PA169   | PA169-Parada 1 / (M) Universidad Católica             | pharmacy | Farmacias del Dr. Simi                |         166
+ PA375   | PA375-Parada 2 / (M) Universidad de Chile             | pharmacy | Farmacias Ahumada                     |         163
+ PA335   | PA335-Parada 3 / (M) Unión Latinoamericana            | pharmacy | SalcoBrand                            |         158
+ PA341   | PA341-Parada 3 / (M) Universidad Católica             | clinic   | Hospital Clínico Universidad Católica |         156
+ PA350   | PA350-Parada 7 / (M) Universidad de Chile             | pharmacy | Farmacias Ahumada                     |         151
+ PD1315  | PD1315-Av. Vicuña Mackenna / esq. Av. Manuel A. Matta | pharmacy | Farma Plus                            |         148
+ PI404   | PI404-Parada 4 / (M) Universidad de Santiago          | pharmacy | Farmacia Belgo Chilena                |         147
+ PA179   | PA179-Av. Vicuña Mackenna / esq. Maule                | pharmacy | Movimed                               |         143
+ PD1607  | PD1607-Parada 1 / (M) Irarrázaval                     | pharmacy | Farma Plus                            |         137
+ PI405   | PI405-Parada 2 / (M) San Alberto Hurtado              | pharmacy | Farmacia Belgochilena                 |         130
+ PA181   | PA181-Parada 1 / (M) Ñuble                            | pharmacy |                                       |         126
+ PA349   | PA349-Parada 4 / (M) Unión Latinoamericana            | pharmacy | SalcoBrand                            |         120
+ PH212   | PH212-Parada 1 / (M) Camino Agrícola                  | pharmacy | Farmacias Ahumada                     |         111
+ PA377   | PA377-Parada 2 / (M) Los Héroes                       | pharmacy | Redfarma                              |         110
+ PD193   | PD193-Parada 1 / (M) Pedrero                          | pharmacy | Cruz Verde                            |         109
+ PE156   | PE156-Parada 2 / (M) Mirador                          | pharmacy | Farmacias Family                      |         105
+ PA165   | PA165-Parada 7 / (M) Los Héroes                       | pharmacy | Redfarma                              |         104
+ PA177   | PA177-Parada 4 / (M) Irarrázaval                      | pharmacy | Farma Plus                            |         102
+ PA668   | PA668-Parada 12 / (M) Los Héroes                      | pharmacy | Redfarma                              |         101
+ PC82    | PC82-Parada 2 / (M) Santa Isabel                      | doctors  | COSAMSantiago                         |         100
+ PE155   | PE155-Parada / Paradero 11 Av.Vicuña Mackenna         | doctors  | Flodial                               |          91
+ PI344   | PI344-Parada 4 / San Borja                            | pharmacy | Naturland                             |          91
+ PA347   | PA347-Parada 1 / (M) Los Héroes                       | pharmacy | Farmacias del Sur                     |          87
+ PA551   | PA551-Parada 2 / (M) Unión Latinoamericana            | pharmacy | Farmacias Knop                        |          87
+ PI342   | PI342-Parada 1 / San Borja                            | pharmacy | SalcoBrand                            |          87
+ PD202   | PD202-Parada 2 / (M) Rodrigo de Araya                 | pharmacy | Farmacia Amaya                        |          85
+ PH217   | PH217-Parada 5 / (M) Pedrero                          | pharmacy | Cruz Verde                            |          83
+ PI1813  | PI1813-Parada 7 / (M) Estación Central                | pharmacy | Farmacias del Dr. Simi                |          82
+ PA183   | PA183-Parada 3 / (M) Universidad de Chile             | pharmacy | Farmacias Ahumada                     |          81
+ PA337   | PA337-Parada 8 / (M) Los Héroes                       | pharmacy | Farmacias del Sur                     |          81
+ PA369   | PA369-Parada 5 / (M) República                        | pharmacy | Farmacias del Dr. Simi                |          79
+ PI401   | PI401-Parada 4 / (M) San Alberto Hurtado              | pharmacy | Farmacias del Dr. Simi                |          78
+ PA372   | PA372-Parada 8 / Plaza Italia                         | pharmacy | Farmacias del Dr. Simi                |          77
+ PD209   | PD209-Parada 7 / (M) Irarrázaval                      | pharmacy | Farmacias Chile                       |          77
+ PI403   | PI403-Parada 8 / (M) Estación Central                 | pharmacy | SalcoBrand                            |          72
+ PA164   | PA164-Parada 2 / (M) República                        | pharmacy | Farmacia Ochoa                        |          70
+ PA16    | PA16-Parada 2 / (M) Estación Central                  | pharmacy | Farmacias del Dr. Simi                |          70
+ PA346   | PA346-Parada 10 / (M) La Moneda                       | doctors  | Centro Médico Clini                   |          68
+ PI345   | PI345-Parada 2 / (M) Universidad de Santiago          | pharmacy | Farmacia Belgo Chilena                |          67
+ PA343   | PA343-Parada 10 / Plaza Italia                        | pharmacy | Ecofarmacias                          |          64
+ PA176   | PA176-Parada 6 / (M) Irarrázaval                      | pharmacy |                                       |          64
+ PA339   | PA339-Parada 5 / (M) Universidad de Chile             | pharmacy | SalcoBrand                            |          64
+ PA167   | PA167-Parada 6 / (M) Universidad de Chile             | pharmacy | Farmacias Ahumada                     |          63
+ PA385   | PA385-Parada 3 / (M) Santa Lucía                      | pharmacy | Farmacias del Dr. Simi                |          63
+ PA657   | PA657-Parada 5 / (M) Unión Latinoamericana            | pharmacy | SalcoBrand                            |          62
+ PA28    | PA28-Parada 7 / (M) La Moneda                         | pharmacy | Cruz Verde                            |          62
+ PA348   | PA348-Parada 6 / (M) República                        | pharmacy | Farmacias del Dr. Simi                |          62
+ PI454   | PI454-Parada 2 / San Borja                            | pharmacy | Naturland                             |          61
+ PA367   | PA367-Parada 3 / (M) Estación Central                 | pharmacy | Farmacias del Dr. Simi                |          59
+ PA166   | PA166-Parada 8 / (M) La Moneda                        | pharmacy | Cruz Verde                            |          58
+ PC84    | PC84-Parada 2 / (M) Parque Bustamante                 | pharmacy | Farmatotal                            |          56
+ PI340   | PI340-Parada 3 / (M) San Alberto Hurtado              | pharmacy | Farmacia Belgochilena                 |          55
+ PA174   | PA174-Parada 1 / (M) Santa Isabel                     | doctors  | COSAMSantiago                         |          53
+ PI1812  | PI1812-Parada 11 / (M) Estación Central               | pharmacy | Farmacias del Dr. Simi                |          49
+ PA170   | PA170-Parada 6 / Plaza Italia                         | pharmacy | Farmacias del Dr. Simi                |          46
+ PA373   | PA373-Parada 9 / Plaza Italia                         | pharmacy | Farmacias del Dr. Simi                |          45
+ PE1490  | PE1490-Parada 1 / (M) Bellavista de La Florida        | pharmacy | Farmacias del Dr. Simi                |          45
+ PA182   | PA182-Parada 2 / (M) Santa Lucía                      | pharmacy | Cruz Verde                            |          44
+ PA338   | PA338-Parada 6 / (M) La Moneda                        | pharmacy | Farmacias del Dr. Simi                |          43
+ PH209   | PH209-Parada 1 / (M) Rodrigo de Araya                 | pharmacy | Farmacia Amaya                        |          43
+ PE1499  | PE1499-Av. Vicuña Mackenna / esq. El Manzano          | clinic   | Fonasa                                |          43
+ PA340   | PA340-Parada 9 / (M) Santa Lucía                      | pharmacy | Farmacia La Rebaja                    |          42
+ PD198   | PD198-Parada 2 / (M) Camino Agrícola                  | pharmacy | Damyfar                               |          41
+ PC86    | PC86-Parada 4 / Plaza Italia                          | pharmacy | Cruz Verde                            |          39
+ PE125   | PE125-Parada 9 / (M) Bellavista de La Florida         | pharmacy | Farmacias Ahumada                     |          39
+ PA371   | PA371-Parada 5 / (M) Santa Lucía                      | clinic   | IntegraMédica Alameda                 |          39
+ PA366   | PA366-Parada 4 / (M) Los Héroes                       | pharmacy | Redfarma                              |          37
+ PI341   | PI341-Parada 1 / (M) Universidad de Santiago          | pharmacy | Farmacia Belgo Chilena                |          37
+ PA336   | PA336-Parada 3 / (M) República                        | pharmacy | Farmacias del Dr. Simi                |          34
+ PI449   | PI449-Parada 6 / (M) San Alberto Hurtado              | pharmacy | Farmacias Ahumada                     |          33
+ PA365   | PA365-Parada 3 / (M) La Moneda                        | pharmacy | SalcoBrand                            |          33
+ PA172   | PA172-Parada 1 / (M) Parque Bustamante                | pharmacy | Farmatotal                            |          33
+ PA344   | PA344-Parada 12 / (M) Santa Lucía                     | pharmacy | Farmacias del Dr. Simi                |          29
+ PA368   | PA368-Parada 4 / (M) Estación Central                 | pharmacy | Omari Farmacia                        |          28
+ PI440   | PI440-Parada 3 / San Borja                            | pharmacy | Naturland                             |          26
+ PA185   | PA185-Parada 3 / (M) Los Héroes                       | pharmacy | Redfarma                              |          26
+ PA376   | PA376-Parada 2 / (M) La Moneda                        | pharmacy | Cruz Verde                            |          26
+ PA345   | PA345-Parada 4 / (M) Universidad de Chile             | pharmacy | SalcoBrand                            |          25
+ PA370   | PA370-Parada 9 / (M) Los Héroes                       | pharmacy | Farmacias del Sur                     |          25
+ PA676   | PA676-Parada 8 / (M) Irarrázaval                      | pharmacy | Farmacias Chile                       |          23
+ PA184   | PA184-Parada 4 / (M) La Moneda                        | pharmacy | SalcoBrand                            |          20
+ PA187   | PA187-Parada 1 / (M) República                        | pharmacy | Farmacia Ochoa                        |          17
+ PA374   | PA374-Parada 10 / (M) Santa Lucía                     | pharmacy | Farmacias del Dr. Simi                |          14
+ PI439   | PI439-Parada 3 / (M) Universidad de Santiago          | pharmacy | Cruz Verde                            |          12
+ PA215   | PA215-Parada 5 / (M) La Moneda                        | pharmacy | Cruz Verde                            |          10
+ PA342   | PA342-Parada 7 / Plaza Italia                         | pharmacy | Farmacias del Dr. Simi                |          10
+ PA168   | PA168-Parada 4 / (M) Santa Lucía                      | pharmacy | Farmacias del Dr. Simi                |           5
+(131 rows)
+

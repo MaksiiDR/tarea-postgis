@@ -1,0 +1,23 @@
+== Q7: resumen por tipo de establecimiento (radio 300 m)
+ amenity  | establecimientos | sin_paradero_300m | rutas_promedio | mediana_viajes_dia 
+----------+------------------+-------------------+----------------+--------------------
+ clinic   |              268 |                 6 |           13.7 |             2225.5
+ hospital |               48 |                 0 |           13.6 |               1889
+(2 rows)
+
+
+== Q7: los 10 con menos viajes por día
+ amenity  |                       nombre                       | paraderos | viajes_laboral 
+----------+----------------------------------------------------+-----------+----------------
+ clinic   | Centro de Trastornos del Movimiento                |         0 |              0
+ clinic   | Centro Medico CLC - Peñalolén                      |         0 |              0
+ clinic   | Cesfam Apoquindo                                   |         0 |              0
+ clinic   | CESFAM Doctor Juan Petrinovic                      |         0 |              0
+ clinic   | CESFAM Rosita Renard                               |         0 |              0
+ clinic   | Terré                                              |         0 |              0
+ clinic   | CESFAM Santa Julia                                 |         1 |            113
+ clinic   | Clínica El Bosque                                  |         2 |            136
+ hospital | Hospital de Enfermedades Infecciosas Lucio Córdova |         2 |            150
+ hospital | Hospital Instituto Nacional de Geriatría           |         3 |            262
+(10 rows)
+

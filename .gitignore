@@ -1,0 +1,12 @@
+# Datos fuente y derivados: NO se versionan (ver README, sección "Datos")
+datos/*
+!datos/.gitkeep
+*.pbf
+*.gpkg
+*.zip
+*.osm
+# Pero sí se versionan los entregables chicos de salida
+!resultados/*.gpkg
+__pycache__/
+.ipynb_checkpoints/
+.venv/

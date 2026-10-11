@@ -1,0 +1,15 @@
+== Q3: umbral 50 m
+ gtfs_total | gtfs_sin_osm_50m | osm_total | osm_sin_gtfs_50m 
+------------+------------------+-----------+------------------
+       6569 |              381 |      6567 |              364
+(1 row)
+
+
+== Q3: sensibilidad al umbral
+ umbral_m | gtfs_sin_osm | osm_sin_gtfs 
+----------+--------------+--------------
+       25 |         1004 |          995
+       50 |          381 |          364
+      100 |          141 |          137
+(3 rows)
+

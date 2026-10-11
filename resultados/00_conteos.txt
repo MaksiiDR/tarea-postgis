@@ -1,0 +1,55 @@
+== Tablas del esquema propio: filas, SRID, tipo de geometría
+       tabla       | filas  | srid |     tipo     
+-------------------+--------+------+--------------
+ comunas_zona      |     30 | 5361 | MULTIPOLYGON
+ comunas_sub       |     34 | 5361 | POLYGON
+ comunas_cl (pais) |    345 | 5361 | MULTIPOLYGON
+ paraderos_osm     |   6567 | 5361 | POINT
+ paraderos_gtfs    |   6569 | 5361 | POINT
+ recorridos        |    690 | 5361 | LINESTRING
+ amenidades        |  20770 | 5361 | POINT
+ calles            | 100686 | 5361 | LINESTRING
+ edificios (geom)  | 118700 | 5361 | MULTIPOLYGON
+ edificios (punto) | 118700 | 5361 | POINT
+
+
+== Índices de cada tabla y su tamaño
+     tabla      |         indice          |    tipo     |   tamano   
+----------------+-------------------------+-------------+------------
+ amenidades     | idx_amenidades_amenity  | btree       | 168 kB
+ amenidades     | idx_amenidades_geom     | GIST        | 808 kB
+ calles         | idx_calles_geom         | GIST        | 4176 kB
+ comunas_sub    | idx_comunas_sub_cut     | btree       | 16 kB
+ comunas_sub    | idx_comunas_sub_geom    | GIST        | 8192 bytes
+ comunas_zona   | idx_comunas_zona_cut    | btree       | 16 kB
+ comunas_zona   | idx_comunas_zona_geom   | GIST        | 8192 bytes
+ edificios      | idx_edificios_cut       | btree       | 832 kB
+ edificios      | idx_edificios_geom      | GIST        | 9912 kB
+ edificios      | idx_edificios_punto     | GIST        | 9824 kB
+ paraderos_gtfs | idx_paraderos_gtfs_geom | GIST        | 272 kB
+ paraderos_gtfs | paraderos_gtfs_pkey     | btree unico | 160 kB
+ paraderos_osm  | idx_paraderos_osm_geom  | GIST        | 264 kB
+ recorridos     | idx_recorridos_geom     | GIST        | 40 kB
+ recorridos     | idx_recorridos_ruta     | btree       | 32 kB
+ recorridos     | recorridos_pkey         | btree unico | 48 kB
+
+
+== Tamaño de las tablas (datos + índices)
+      tabla       |  total  
+------------------+---------
+ comunas_cl       | 108 MB
+ gtfs_stop_times  | 92 MB
+ edificios        | 82 MB
+ osm_puntos       | 56 MB
+ osm_poligonos    | 49 MB
+ osm_lineas       | 47 MB
+ gtfs_shapes      | 27 MB
+ calles           | 23 MB
+ recorridos       | 9400 kB
+ spatial_ref_sys  | 7144 kB
+ gtfs_trips       | 3872 kB
+ amenidades       | 3544 kB
+ viajes_por_trip  | 2992 kB
+ gtfs_stops       | 2336 kB
+ gtfs_frequencies | 1584 kB
+

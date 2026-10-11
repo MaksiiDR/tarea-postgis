@@ -1,0 +1,33 @@
+# Tarea 1 — PostGIS de punta a punta (Santiago centro: OSM + GTFS + DPA)
+#
+#     docker compose up -d --wait     # levanta PostGIS (+ GDAL) y espera a que responda
+#     ./cargar.sh                     # carga y transforma todo (ver README)
+#     ./consultas.sh                  # corre las consultas y guarda resultados/
+#     docker compose down             # apaga (los datos quedan en el volumen)
+#     docker compose down -v          # apaga y borra también el volumen
+
+services:
+  db:
+    build: ./docker
+    image: tarea-postgis
+    container_name: tarea-postgis
+    environment:
+      POSTGRES_PASSWORD: pmd2026
+    ports:
+      - "5435:5432"                          # host:contenedor (5435 para no chocar con el Lab 05, que usa 5434)
+    volumes:
+      - tarea-pgdata:/var/lib/postgresql/data   # volumen con nombre: la base sobrevive a `down`
+      - ./datos:/datos                          # fuentes (PBF, ZIP GTFS, comunas_cl.sql) y archivos intermedios
+      - ./sql:/sql:ro                           # transformaciones
+      - ./consultas:/consultas:ro               # las 7 preguntas
+      - ./resultados:/resultados                # salidas: texto de resultados, planes, GeoPackage
+    shm_size: 1gb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  tarea-pgdata:
+    name: tarea-pgdata
