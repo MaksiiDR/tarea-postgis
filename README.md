@@ -2,6 +2,7 @@
 
 Procesamiento Masivo de Datos (ELE051-B / EIN102B) · USM 2026-2 · Paralelo 701.
 Integrantes: Maximiliano Del Rio · Patricio Aylwin.
+Repositorio: https://github.com/MaksiiDR/tarea-postgis
 Pipeline: **OpenStreetMap + GTFS (DTPM) + DPA 2023 → PostGIS (SRID 5361) → 7 consultas → mapas e informe.**
 
 Pregunta que ordena todo: *¿cómo se relaciona la ciudad construida (OSM) con la red de transporte público (GTFS)?*
