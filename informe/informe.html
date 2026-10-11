@@ -7,7 +7,8 @@ h1 { font-size: 15pt; margin: 0 0 2pt; } h2 { font-size: 12pt; margin: 26pt 0 4p
 h3 { font-size: 10pt; margin: 26pt 0 3pt; }
 h2 + h3 { margin-top: 10pt; }
 h1 + .meta + h2 { margin-top: 18pt; }
-h2:first-of-type { margin-top: 18pt; } p { margin: 3pt 0; }
+h2:first-of-type { margin-top: 18pt; } p, .r { margin: 3pt 0; text-align: justify; hyphens: auto; }
+.meta, figcaption, td, th { text-align: left; }
 .meta { font-size: 8.5pt; color: #444; margin-bottom: 6pt; }
 table { border-collapse: collapse; font-size: 8.3pt; margin: 4pt 0; } td, th { border: 0.5pt solid #999; padding: 1.5pt 5pt; text-align: right; }
 th { background: #eee; } td:first-child, th:first-child { text-align: left; }
@@ -15,6 +16,7 @@ figure { margin: 5pt 0; text-align: center; } figure img { max-width: 100%; } fi
 .r { background: #f6f6f6; border-left: 2pt solid #666; padding: 2pt 6pt; margin: 3pt 0; }
 code { font: 8.4pt "DejaVu Sans Mono", monospace; } .break { page-break-before: always; }
 table, figure, .r { break-inside: avoid; }
+h2, h3 { break-after: avoid; }
 .cols { display: flex; gap: 8pt; } .cols > div { flex: 1; }
 </style></head><body>
 
