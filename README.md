@@ -1,4 +1,4 @@
-# Tarea 1 — PostGIS de punta a punta: Santiago centro
+# Tarea 1 — PostGIS
 
 Procesamiento Masivo de Datos (ELE051-B / EIN102B) · USM 2026-2 · Paralelo 701.
 Integrantes: Maximiliano Del Rio · Patricio Aylwin.

@@ -1,4 +1,4 @@
-# Tarea 1 — PostGIS de punta a punta (Santiago centro: OSM + GTFS + DPA)
+# Tarea 1 — PostGIS (Santiago centro: OSM + GTFS + DPA)
 #
 #     docker compose up -d --wait     # levanta PostGIS (+ GDAL) y espera a que responda
 #     ./cargar.sh                     # carga y transforma todo (ver README)

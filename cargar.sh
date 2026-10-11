@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Carga de punta a punta: fuentes en ./datos → PostGIS (todo en SRID 5361), con índices y ANALYZE.
+# Carga completa: fuentes en ./datos → PostGIS (todo en SRID 5361), con índices y ANALYZE.
 #   uso:  docker compose up -d --wait && ./cargar.sh        (idempotente: se puede repetir)
 set -euo pipefail
 cd "$(dirname "$0")"
