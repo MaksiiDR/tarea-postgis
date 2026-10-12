@@ -50,7 +50,7 @@ Caja `santiago-centro`: lon −70,75 … −70,52 · lat −33,52 … −33,36 (
 | `consultas/` | `q1`…`q7`, `q4_tiempos`, `planes`, `00_conteos` |
 | `resultados/` | salida de cada consulta, planes `EXPLAIN ANALYZE`, uso de índices, `00_pipeline_log.txt`, GeoPackage para QGIS |
 | `scripts/mapas.py`, `mapas/` | mapas PNG del informe |
-| `informe/` | informe PDF (≤ 6 pág.) y su fuente |
+| `informe/` | informe PDF (≤ 6 pág.) |
 
 ## Tablas, conteos e índices
 
