@@ -8,6 +8,7 @@ SELECT t AS tabla, n AS filas, srid, tipo FROM (
   UNION ALL SELECT 'amenidades', count(*), max(ST_SRID(geom)), max(GeometryType(geom)) FROM amenidades
   UNION ALL SELECT 'paraderos_gtfs', count(*), max(ST_SRID(geom)), max(GeometryType(geom)) FROM paraderos_gtfs
   UNION ALL SELECT 'recorridos', count(*), max(ST_SRID(geom)), max(GeometryType(geom)) FROM recorridos
+  UNION ALL SELECT 'caja', count(*), max(ST_SRID(geom)), max(GeometryType(geom)) FROM caja
   UNION ALL SELECT 'comunas_zona', count(*), max(ST_SRID(geom)), max(GeometryType(geom)) FROM comunas_zona
   UNION ALL SELECT 'comunas_sub', count(*), max(ST_SRID(geom)), max(GeometryType(geom)) FROM comunas_sub
   UNION ALL SELECT 'comunas_cl (pais)', count(*), max(ST_SRID(geom)), max(GeometryType(geom)) FROM comunas_cl
@@ -20,7 +21,7 @@ SELECT tablename AS tabla, indexname AS indice,
        pg_size_pretty(pg_relation_size(quote_ident(indexname)::regclass)) AS tamano
 FROM pg_indexes
 WHERE schemaname = 'public' AND tablename IN ('calles','edificios','paraderos_osm','amenidades','paraderos_gtfs',
-                                               'recorridos','comunas_zona','comunas_sub')
+                                               'recorridos','comunas_zona','comunas_sub','caja')
 ORDER BY 1, 2;
 
 \echo

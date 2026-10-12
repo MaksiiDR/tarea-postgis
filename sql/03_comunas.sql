@@ -22,6 +22,7 @@ WHERE c.geom && k.geom AND ST_Intersects(c.geom, k.geom);
 CREATE TABLE comunas_sub AS
 SELECT cut_com, comuna, ST_Subdivide(geom, 256) AS geom FROM comunas_zona;
 
+CREATE INDEX idx_caja_geom ON caja USING GIST (geom);
 CREATE INDEX idx_comunas_zona_geom ON comunas_zona USING GIST (geom);
 CREATE INDEX idx_comunas_sub_geom ON comunas_sub USING GIST (geom);
 CREATE INDEX idx_comunas_zona_cut ON comunas_zona (cut_com);

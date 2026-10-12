@@ -1,6 +1,7 @@
 == Tablas del esquema propio: filas, SRID, tipo de geometría
        tabla       | filas  | srid |     tipo     
 -------------------+--------+------+--------------
+ caja              |      1 | 5361 | POLYGON
  comunas_zona      |     30 | 5361 | MULTIPOLYGON
  comunas_sub       |     34 | 5361 | POLYGON
  comunas_cl (pais) |    345 | 5361 | MULTIPOLYGON
@@ -18,14 +19,15 @@
 ----------------+-------------------------+-------------+------------
  amenidades     | idx_amenidades_amenity  | btree       | 168 kB
  amenidades     | idx_amenidades_geom     | GIST        | 808 kB
+ caja           | idx_caja_geom           | GIST        | 8192 bytes
  calles         | idx_calles_geom         | GIST        | 4176 kB
  comunas_sub    | idx_comunas_sub_cut     | btree       | 16 kB
  comunas_sub    | idx_comunas_sub_geom    | GIST        | 8192 bytes
  comunas_zona   | idx_comunas_zona_cut    | btree       | 16 kB
  comunas_zona   | idx_comunas_zona_geom   | GIST        | 8192 bytes
  edificios      | idx_edificios_cut       | btree       | 832 kB
- edificios      | idx_edificios_geom      | GIST        | 9912 kB
- edificios      | idx_edificios_punto     | GIST        | 9824 kB
+ edificios      | idx_edificios_geom      | GIST        | 9832 kB
+ edificios      | idx_edificios_punto     | GIST        | 9832 kB
  paraderos_gtfs | idx_paraderos_gtfs_geom | GIST        | 272 kB
  paraderos_gtfs | paraderos_gtfs_pkey     | btree unico | 160 kB
  paraderos_osm  | idx_paraderos_osm_geom  | GIST        | 264 kB
@@ -48,7 +50,7 @@
  recorridos       | 9400 kB
  spatial_ref_sys  | 7144 kB
  gtfs_trips       | 3872 kB
- amenidades       | 3544 kB
+ amenidades       | 3152 kB
  viajes_por_trip  | 2992 kB
  gtfs_stops       | 2336 kB
  gtfs_frequencies | 1584 kB

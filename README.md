@@ -65,14 +65,25 @@ Conteos de esta carga (`resultados/00_conteos.txt`; la bitácora completa está 
 | `amenidades` (puntos + polígonos→punto) | 20.770 | Point | GIST `geom`, btree `amenity` |
 | `paraderos_gtfs` | 6.569 | Point | GIST, PK `stop_id` |
 | `recorridos` (1 LineString por `shape_id`) | 690 (586 canónicos, 338 rutas) | LineString | GIST, PK `shape_id`, btree `route_short_name` |
+| `caja` (la caja del enunciado en 5361) | 1 | Polygon | GIST |
 | `comunas_zona` (comunas de la caja, recortadas) | 30 | MultiPolygon | GIST, btree `cut_com` |
 | `comunas_sub` (`ST_Subdivide` 256 vértices) | 34 | Polygon | GIST, btree `cut_com` |
 | `comunas_cl` (país, Lab 03) | 345 | MultiPolygon | GIST (del `.sql`) |
-| `gtfs_*` crudas (`stops`, `routes`, `trips`, `shapes`, `stop_times`, `calendar`, `frequencies`) | 18.455 · 428 · 26.159 · 456.573 · **1.098.529** · · 14.542 | — | btree de apoyo en `trip_id`, `stop_id`, `shape_id` |
+| `gtfs_*` crudas (`stops`, `routes`, `trips`, `shapes`, `stop_times`, `calendar`, `frequencies`) | 18.455 · 428 · 26.159 · 456.573 · **1.098.529** · 6 · 14.542 | — | btree de apoyo en `trip_id`, `stop_id`, `shape_id` |
 | `viajes_por_trip` | 26.159 | — | btree `trip_id` |
 | `mv_grilla` (vista materializada, Q6) | 682 celdas | Polygon | GIST |
+| `pipeline_log` (bitácora de reparaciones, filtros y conteos) | 36 | — | — |
 
 `stop_times.txt` (1,1 M filas) se cargó con **`\copy` (un solo COPY por archivo)**; no hay `INSERT` fila a fila.
+
+## Planes de ejecución comentados
+
+Texto completo en `resultados/planes.txt` y `resultados/q4_tiempos.txt` (`EXPLAIN ANALYZE`; los tiempos varían ~±15 % entre corridas).
+
+- **Q2, anti-join de cobertura (747 ms).** `Nested Loop Anti Join`: lado externo `Parallel Seq Scan` de `edificios` (118.700 filas, una vez); lado interno `Index Scan using idx_paraderos_gtfs_geom` con `Index Cond: geom && st_expand(punto, 500)` y luego el filtro exacto `st_dwithin`. Se usa el índice de la tabla **pequeña** (6.569 paraderos) porque se consulta 118.700 veces. Con `enable_indexscan/bitmapscan = off` el mismo anti-join es un producto cruzado filtrado (97 M de pares descartados): **31,0 s, ~41 veces más lento** (Plan 1b).
+- **Q1, punto-en-polígono (11 ms).** `Nested Loop`: `Seq Scan` de `comunas_sub` (34 filas, no necesita índice) y por cada trozo `Index Scan` en `idx_paraderos_gtfs_geom` (`geom && c.geom`, luego `st_intersects`). Sin el índice de paraderos serían 34 × 6.569 comparaciones punto-polígono.
+- **Q5, vecino más cercano (22 ms para 200 paraderos).** `Index Scan using idx_amenidades_geom … Order By: geom <-> paraderos_gtfs.geom` con `LIMIT 1` y `Filter: amenity = ANY(…)`: el índice GIST entrega las amenidades en orden de distancia y se detiene en la primera que pasa el filtro (descarta ~20 por búsqueda). Sin índice habría que calcular y ordenar la distancia a las 20.770 amenidades por cada paradero.
+- **Q4, líneas contra polígonos (414 ms).** `Nested Loop` con `Index Scan using idx_recorridos_geom` en el lado de las líneas (`geom && c.geom`, ~78 líneas candidatas por trozo) y `Seq Scan` de `comunas_sub`; el costo está en `ST_Intersection` y en el `Sort external merge` (~14 MB a disco), no en el acceso. Efecto de `ST_Subdivide` (`resultados/q4_tiempos.txt`): comunas enteras 1.208 ms → subdivididas 547 ms (×2,2); con comunas ya recortadas a la caja no hay ganancia (440 vs 426 ms).
 
 ## Decisiones tomadas
 
